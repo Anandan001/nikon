@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NIKON Store – Discover the world's finest cameras, lenses, and accessories. Capture life in stunning detail with Nikon's legendary precision engineering." />
+  <meta name="keywords" content="Nikon cameras, mirrorless cameras, DSLR, Nikon lenses, camera store, Z-series, Nikon Z9" />
+  <title>NIKON | See What Matters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo-link">
+        <span class="logo-text">NIKON</span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active" data-nav="home">Home</a>
+        <a href="#products" class="nav-link" data-nav="products">Cameras</a>
+        <a href="#lenses" class="nav-link" data-nav="lenses">Lenses</a>
+        <a href="#features" class="nav-link" data-nav="features">Technology</a>
+        <a href="#testimonials" class="nav-link" data-nav="testimonials">Reviews</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="nav-icon-btn cart-btn" id="cart-btn" aria-label="Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== SEARCH OVERLAY ========== -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-container">
+      <input type="text" class="search-input" id="search-input" placeholder="Search cameras, lenses, accessories..." />
+      <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-particles" id="hero-particles"></div>
+      <div class="hero-gradient-orb orb-1"></div>
+      <div class="hero-gradient-orb orb-2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        New 2025 Collection Available
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">See What</span>
+        <span class="title-line accent">Matters.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Experience the world through Nikon's legendary precision optics. 
+        Professional-grade cameras built for those who demand the very best.
+      </p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary" id="hero-shop-btn">
+          <span>Shop Now</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+        <a href="#features" class="btn btn-ghost" id="hero-learn-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
+          <span>Watch Film</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="45">0</span><span class="stat-unit">MP</span>
+          <span class="stat-label">Max Resolution</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="120">0</span><span class="stat-unit">fps</span>
+          <span class="stat-label">Burst Speed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="8">0</span><span class="stat-unit">K</span>
+          <span class="stat-label">Video Recording</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="camera-showcase">
+        <div class="camera-glow"></div>
+        <img src="images/hero_camera.png" alt="Nikon Z9 Flagship Camera" class="hero-camera-img" id="hero-camera-img" />
+        <div class="camera-badge-floating spec-badge-1">
+          <span>45.7 MP</span>
+          <small>Full Frame Sensor</small>
+        </div>
+        <div class="camera-badge-floating spec-badge-2">
+          <span>8K Video</span>
+          <small>Cinema Quality</small>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE BANNER ========== -->
+  <div class="marquee-banner">
+    <div class="marquee-track">
+      <span>FREE SHIPPING ON ORDERS OVER $500</span>
+      <span class="marquee-dot">●</span>
+      <span>2-YEAR WARRANTY ON ALL CAMERAS</span>
+      <span class="marquee-dot">●</span>
+      <span>EXCLUSIVE NIKON AUTHORIZED DEALER</span>
+      <span class="marquee-dot">●</span>
+      <span>TRADE-IN PROGRAM AVAILABLE</span>
+      <span class="marquee-dot">●</span>
+      <span>FREE SHIPPING ON ORDERS OVER $500</span>
+      <span class="marquee-dot">●</span>
+      <span>2-YEAR WARRANTY ON ALL CAMERAS</span>
+      <span class="marquee-dot">●</span>
+      <span>EXCLUSIVE NIKON AUTHORIZED DEALER</span>
+      <span class="marquee-dot">●</span>
+      <span>TRADE-IN PROGRAM AVAILABLE</span>
+      <span class="marquee-dot">●</span>
+    </div>
+  </div>
+
+  <!-- ========== FEATURED CATEGORIES ========== -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Browse By</span>
+        <h2 class="section-title">Category</h2>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card" id="cat-mirrorless" onclick="filterCategory('mirrorless')">
+          <div class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="16" width="48" height="36" rx="5" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="32" cy="34" r="10" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="32" cy="34" r="5" fill="currentColor" opacity="0.3"/>
+              <rect x="20" y="8" width="14" height="10" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="50" cy="24" r="3" fill="currentColor" opacity="0.6"/>
+            </svg>
+          </div>
+          <h3>Mirrorless</h3>
+          <p>Z-series precision</p>
+          <span class="category-count">12 Models</span>
+        </div>
+        <div class="category-card" id="cat-dslr" onclick="filterCategory('dslr')">
+          <div class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="18" width="52" height="34" rx="5" stroke="currentColor" stroke-width="2.5"/>
+              <rect x="6" y="12" width="22" height="10" rx="3" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="33" cy="35" r="11" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="33" cy="35" r="6" fill="currentColor" opacity="0.3"/>
+              <rect x="44" y="22" width="8" height="6" rx="2" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>DSLR</h3>
+          <p>Classic reliability</p>
+          <span class="category-count">8 Models</span>
+        </div>
+        <div class="category-card" id="cat-lenses-cat" onclick="filterCategory('lenses')">
+          <div class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="22" y="8" width="20" height="48" rx="10" stroke="currentColor" stroke-width="2.5"/>
+              <ellipse cx="32" cy="32" rx="8" ry="8" stroke="currentColor" stroke-width="2"/>
+              <ellipse cx="32" cy="32" rx="4" ry="4" fill="currentColor" opacity="0.3"/>
+              <line x1="22" y1="20" x2="42" y2="20" stroke="currentColor" stroke-width="2"/>
+              <line x1="22" y1="44" x2="42" y2="44" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+          <h3>Lenses</h3>
+          <p>Nikkor optics</p>
+          <span class="category-count">35 Options</span>
+        </div>
+        <div class="category-card" id="cat-accessories" onclick="filterCategory('accessories')">
+          <div class="category-icon">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 20h40v28a4 4 0 01-4 4H16a4 4 0 01-4-4V20z" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M20 20V14a4 4 0 014-4h16a4 4 0 014 4v6" stroke="currentColor" stroke-width="2.5"/>
+              <path d="M24 34h16M32 28v12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Accessories</h3>
+          <p>Bags, straps & more</p>
+          <span class="category-count">50+ Items</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS SECTION ========== -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Collection</span>
+        <h2 class="section-title">Featured Cameras</h2>
+        <p class="section-desc">Precision-engineered for photographers who refuse to compromise</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" id="filter-all" onclick="filterProducts('all')">All</button>
+        <button class="filter-btn" id="filter-mirrorless" onclick="filterProducts('mirrorless')">Mirrorless</button>
+        <button class="filter-btn" id="filter-dslr" onclick="filterProducts('dslr')">DSLR</button>
+        <button class="filter-btn" id="filter-compact" onclick="filterProducts('compact')">Compact</button>
+        <div class="filter-sort">
+          <select id="sort-select" onchange="sortProducts(this.value)">
+            <option value="default">Sort By</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="products-grid">
+        <!-- Products injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED PRODUCT SPOTLIGHT ========== -->
+  <section class="spotlight" id="spotlight">
+    <div class="spotlight-bg">
+      <div class="spotlight-glow"></div>
+    </div>
+    <div class="container">
+      <div class="spotlight-inner">
+        <div class="spotlight-content">
+          <span class="section-tag">Flagship Model</span>
+          <h2 class="spotlight-title">Nikon Z9</h2>
+          <p class="spotlight-subtitle">The Most Powerful Camera Nikon Has Ever Made</p>
+          <p class="spotlight-desc">
+            With a 45.7MP stacked CMOS sensor, up to 120fps burst shooting, and groundbreaking 8K video capabilities, 
+            the Z9 redefines what's possible in a professional mirrorless camera. No mechanical shutter. No compromises.
+          </p>
+          <ul class="spotlight-specs">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+              45.7 Megapixel Full-Frame Stacked CMOS
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+              8K/60p RAW Internal Video Recording
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+              120fps High-Speed Burst Mode
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+              Subject Recognition AF (Human, Animal, Vehicle)
+            </li>
+          </ul>
+          <div class="spotlight-price">
+            <span class="price-label">Starting at</span>
+            <span class="price-value">$5,499</span>
+          </div>
+          <div class="spotlight-actions">
+            <button class="btn btn-primary" onclick="addToCartById(1)" id="spotlight-cart-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              Add to Cart
+            </button>
+            <button class="btn btn-outline" onclick="openProductModal(1)" id="spotlight-details-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="spotlight-image">
+          <div class="spotlight-img-glow"></div>
+          <img src="images/z9_flagship.png" alt="Nikon Z9 Flagship Mirrorless Camera" class="spotlight-camera-img" />
+          <div class="rotating-ring"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LENSES SECTION ========== -->
+  <section class="lenses-section" id="lenses">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">NIKKOR Glass</span>
+        <h2 class="section-title">Premium Lenses</h2>
+        <p class="section-desc">Optically perfected for the Z-mount system</p>
+      </div>
+      <div class="lenses-layout">
+        <div class="lenses-image-col">
+          <div class="lenses-img-wrapper">
+            <img src="images/lens_collection.png" alt="Nikon NIKKOR lens collection" class="lenses-main-img" />
+            <div class="lenses-img-badge">
+              <span>35+</span>
+              <small>Available Lenses</small>
+            </div>
+          </div>
+        </div>
+        <div class="lenses-products-col" id="lenses-grid">
+          <!-- Lenses injected by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TECHNOLOGY FEATURES ========== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Innovation</span>
+        <h2 class="section-title">Nikon Technology</h2>
+        <p class="section-desc">Decades of optical mastery, now in the palm of your hand</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card" id="feat-sensor">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><rect x="7" y="7" width="10" height="10" rx="1"/><line x1="12" y1="2" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="2" y1="12" x2="7" y2="12"/><line x1="17" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <h3>Stacked CMOS Sensor</h3>
+          <p>Ultra-fast data readout eliminates rolling shutter distortion, even at 120fps.</p>
+        </div>
+        <div class="feature-card" id="feat-af">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/><path d="M12 5V3M12 21v-2M5 12H3M21 12h-2"/></svg>
+          </div>
+          <h3>Deep Learning AF</h3>
+          <p>Intelligent subject recognition powered by neural networks locks on and holds focus.</p>
+        </div>
+        <div class="feature-card" id="feat-vr">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12m0 0L4 7m8 5l8-5M4 7l8-5 8 5"/><path d="M4 12l8 5 8-5"/></svg>
+          </div>
+          <h3>5-Axis VR Stabilization</h3>
+          <p>Up to 6 stops of vibration reduction for sharp images in any conditions.</p>
+        </div>
+        <div class="feature-card" id="feat-weather">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 17.58A5 5 0 0018 8h-1.26A8 8 0 104 16.25"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="8" y1="20" x2="8.01" y2="20"/><line x1="12" y1="18" x2="12.01" y2="18"/><line x1="12" y1="22" x2="12.01" y2="22"/><line x1="16" y1="16" x2="16.01" y2="16"/><line x1="16" y1="20" x2="16.01" y2="20"/></svg>
+          </div>
+          <h3>Pro Weather Sealing</h3>
+          <p>Dust and moisture resistant construction for professional use in any environment.</p>
+        </div>
+        <div class="feature-card" id="feat-battery">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="16" height="10" rx="2"/><path d="M22 11v2M7 11v2M11 11v2"/><line x1="18" y1="10" x2="18" y2="14"/></svg>
+          </div>
+          <h3>Extended Battery Life</h3>
+          <p>CIPA-rated 740 shots per charge ensures you never miss a critical moment.</p>
+        </div>
+        <div class="feature-card" id="feat-connect">
+          <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
+          </div>
+          <h3>Built-in Wi-Fi & Bluetooth</h3>
+          <p>Instant wireless transfer to your devices and seamless remote control via Nikon app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What Pros Say</span>
+        <h2 class="section-title">Trusted By The Best</h2>
+      </div>
+      <div class="testimonials-carousel" id="testimonials-carousel">
+        <div class="testimonials-track" id="testimonials-track">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The Z9 completely changed how I shoot sports. The subject tracking is supernatural - it anticipates movement before I do. Best camera I've ever owned."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AK</div>
+              <div class="author-info">
+                <span class="author-name">Alex Kim</span>
+                <span class="author-title">Sports Photographer, Getty Images</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"I switched from another major brand after 15 years. The Z-mount glass is breathtaking. 8K footage from the Z9 has a cinematic quality that rivals dedicated cinema cameras."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SR</div>
+              <div class="author-info">
+                <span class="author-name">Sofia Rodriguez</span>
+                <span class="author-title">Cinematographer & Director</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The D850 remains one of the greatest landscape cameras ever made. But after shooting the Z8 for a month, I'm never going back to DSLR. The EVF is that good."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JT</div>
+              <div class="author-info">
+                <span class="author-name">James Turner</span>
+                <span class="author-title">National Geographic Contributor</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">"The weather sealing on the Z9 is incredible. I shot a full day in heavy rain at a motorsport event — not a single issue. Pure reliability when it counts most."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">ML</div>
+              <div class="author-info">
+                <span class="author-name">Maria Laurent</span>
+                <span class="author-title">Motorsport & Action Photographer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button class="testimonial-btn" id="prev-testimonial" onclick="slideTestimonial(-1)" aria-label="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <div class="testimonial-dots" id="testimonial-dots"></div>
+        <button class="testimonial-btn" id="next-testimonial" onclick="slideTestimonial(1)" aria-label="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== NEWSLETTER BANNER ========== -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-content">
+          <h2>Stay in Frame.</h2>
+          <p>Get exclusive deals, new product announcements, and photography tips delivered to your inbox.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address" required />
+          <button type="submit" class="btn btn-primary" id="newsletter-submit-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-desc">Our Nikon specialists are available 7 days a week</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Visit Our Store</h4>
+              <p>123 Photography Plaza, New York, NY 10001</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14h-1v2.92z"/></svg>
+            </div>
+            <div>
+              <h4>Call Us</h4>
+              <p>+1 (800) NIKON-01</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h4>Email Support</h4>
+              <p>support@nikon-store.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </div>
+            <div>
+              <h4>Store Hours</h4>
+              <p>Mon–Sat: 9AM–8PM | Sun: 10AM–6PM</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" placeholder="john@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" placeholder="Product inquiry, support..." />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="contact-submit-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text footer-logo">NIKON</span>
+          <p>See What Matters. Capture the world with legendary Nikon precision and optics since 1917.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram" id="social-instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter" id="social-twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube" id="social-youtube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook" id="social-facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Cameras</h4>
+          <ul>
+            <li><a href="#products">Mirrorless Cameras</a></li>
+            <li><a href="#products">DSLR Cameras</a></li>
+            <li><a href="#products">Compact Cameras</a></li>
+            <li><a href="#products">Action Cameras</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Accessories</h4>
+          <ul>
+            <li><a href="#lenses">NIKKOR Lenses</a></li>
+            <li><a href="#lenses">Flash & Lighting</a></li>
+            <li><a href="#lenses">Bags & Cases</a></li>
+            <li><a href="#lenses">Filters & Adapters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Warranty Registration</a></li>
+            <li><a href="#">Repair Services</a></li>
+            <li><a href="#">User Manuals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Nikon Store. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <div class="payment-badges">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">MC</span>
+          <span class="payment-badge">AMEX</span>
+          <span class="payment-badge">PayPal</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== CART SIDEBAR ========== -->
+  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close-btn" onclick="closeCart()" id="cart-close-btn" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty" id="cart-empty">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <p>Your cart is empty</p>
+        <button class="btn btn-primary" onclick="closeCart()" id="continue-shopping-btn">Continue Shopping</button>
+      </div>
+    </div>
+    <div class="cart-footer" id="cart-footer" style="display:none;">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <div class="cart-shipping">
+        <span>Shipping</span>
+        <span id="cart-shipping">FREE</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkout-btn" onclick="handleCheckout()">
+        Proceed to Checkout
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========== PRODUCT MODAL ========== -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+  <div class="product-modal" id="product-modal">
+    <button class="modal-close" id="modal-close-btn" onclick="closeModal()" aria-label="Close modal">✕</button>
+    <div class="modal-content" id="modal-content">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- ========== TOAST NOTIFICATIONS ========== -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ========== SCROLL TO TOP ========== -->
+  <button class="scroll-top" id="scroll-top-btn" onclick="scrollToTop()" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
