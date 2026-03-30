@@ -293,10 +293,12 @@ document.getElementById("cart-btn").addEventListener("click", openCart);
 function openCart() {
   document.getElementById("cart-sidebar").classList.add("active");
   document.getElementById("cart-overlay").classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 function closeCart() {
   document.getElementById("cart-sidebar").classList.remove("active");
   document.getElementById("cart-overlay").classList.remove("active");
+  document.body.style.overflow = "";
 }
 
 function addToCartById(id) {
@@ -340,41 +342,56 @@ function saveCart() {
 }
 
 function renderCart() {
-  const itemsEl = document.getElementById("cart-items");
-  const emptyEl = document.getElementById("cart-empty");
+  const itemsEl  = document.getElementById("cart-items");
   const footerEl = document.getElementById("cart-footer");
 
   if (!cart.length) {
-    emptyEl.style.display = "flex";
+    itemsEl.innerHTML = `
+      <div class="cart-empty">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+        <p>Your cart is empty</p>
+        <button class="btn btn-primary" onclick="closeCart()" id="continue-shopping-btn">Continue Shopping</button>
+      </div>`;
     footerEl.style.display = "none";
-    itemsEl.innerHTML = "";
-    itemsEl.appendChild(emptyEl);
     return;
   }
 
-  emptyEl.style.display = "none";
-  footerEl.style.display = "flex";
   itemsEl.innerHTML = cart.map(item => `
     <div class="cart-item" id="cart-item-${item.id}">
       <img class="cart-item-img" src="${item.image}" alt="${item.name}" />
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-unit-price">&#8377;${item.price.toLocaleString('en-IN')} each</div>
         <div class="cart-item-price">&#8377;${(item.price * item.qty).toLocaleString('en-IN')}</div>
         <div class="cart-item-qty">
-          <button class="qty-btn" onclick="updateQty(${item.id},-1)" aria-label="Decrease">−</button>
+          <button class="qty-btn" onclick="updateQty(${item.id}, -1)" aria-label="Decrease">−</button>
           <span class="qty-num">${item.qty}</span>
-          <button class="qty-btn" onclick="updateQty(${item.id},1)" aria-label="Increase">+</button>
+          <button class="qty-btn" onclick="updateQty(${item.id}, 1)" aria-label="Increase">+</button>
         </div>
       </div>
-      <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3,6 5,6 21,6"/><path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6"/><path d="M10,11v6M14,11v6"/><path d="M9,6V4h6v2"/></svg>
+      <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="3,6 5,6 21,6"/>
+          <path d="M19,6l-1,14a2,2,0,0,1-2,2H8a2,2,0,0,1-2-2L5,6"/>
+          <path d="M10,11v6M14,11v6"/><path d="M9,6V4h6v2"/>
+        </svg>
       </button>
     </div>`).join("");
 
   const subtotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
-  document.getElementById("cart-subtotal").textContent = "\u20B9" + subtotal.toLocaleString('en-IN');
-  document.getElementById("cart-shipping").textContent = subtotal >= 42000 ? "FREE" : "\u20B92,499";
-  document.getElementById("cart-total").textContent = "\u20B9" + (subtotal + (subtotal >= 42000 ? 0 : 2499)).toLocaleString('en-IN');
+  const shipping  = subtotal >= 42000 ? 0 : 2499;
+  const total     = subtotal + shipping;
+
+  document.getElementById("cart-subtotal").textContent = "₹" + subtotal.toLocaleString('en-IN');
+  document.getElementById("cart-shipping").textContent = shipping === 0 ? "FREE" : "₹" + shipping.toLocaleString('en-IN');
+  document.getElementById("cart-total").textContent    = "₹" + total.toLocaleString('en-IN');
+
+  footerEl.style.display = "flex";
+  footerEl.style.flexDirection = "column";
 }
 
 function updateCartCount() {
