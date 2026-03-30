@@ -7,53 +7,53 @@ const products = [
   {
     id: 1, category: "mirrorless", name: "Nikon Z9",
     desc: "Flagship full-frame mirrorless with 45.7MP stacked CMOS and 8K video.",
-    price: 5499, oldPrice: null, rating: 5, reviews: 312,
+    price: 456995, oldPrice: null, rating: 5, reviews: 312,
     badge: "hot", image: "images/z9_flagship.png",
     specs: { Sensor:"45.7MP Full-Frame Stacked CMOS", Video:"8K/60p RAW", Burst:"120fps", AF:"693-point Deep Learning", Weight:"1340g", Mount:"Nikon Z" }
   },
   {
     id: 2, category: "dslr", name: "Nikon D850",
     desc: "45.7MP full-frame DSLR with exceptional dynamic range for landscapes and studio work.",
-    price: 2799, oldPrice: 3299, rating: 5, reviews: 894,
+    price: 232995, oldPrice: 274995, rating: 5, reviews: 894,
     badge: "sale", image: "images/d850_camera.png",
     specs: { Sensor:"45.7MP Full-Frame BSI CMOS", Video:"4K UHD", Burst:"9fps", AF:"153-point Multi-CAM 20K", Weight:"1005g", Mount:"Nikon F" }
   },
   {
     id: 3, category: "mirrorless", name: "Nikon Z50",
     desc: "Compact APS-C mirrorless perfect for travel, vlogging, and everyday adventures.",
-    price: 857, oldPrice: null, rating: 4, reviews: 456,
+    price: 71995, oldPrice: null, rating: 4, reviews: 456,
     badge: "new", image: "images/z50_camera.png",
     specs: { Sensor:"20.9MP APS-C CMOS", Video:"4K UHD", Burst:"11fps", AF:"209-point Hybrid AF", Weight:"395g", Mount:"Nikon Z" }
   },
   {
     id: 4, category: "mirrorless", name: "Nikon Z8",
     desc: "Professional full-frame mirrorless combining Z9 power in a compact body.",
-    price: 3999, oldPrice: null, rating: 5, reviews: 178,
+    price: 331995, oldPrice: null, rating: 5, reviews: 178,
     badge: "new", image: "images/z9_flagship.png",
     specs: { Sensor:"45.7MP Full-Frame Stacked CMOS", Video:"8K/60p RAW", Burst:"20fps", AF:"493-point Deep Learning", Weight:"820g", Mount:"Nikon Z" }
   },
   {
     id: 5, category: "dslr", name: "Nikon D7500",
     desc: "Advanced APS-C DSLR with pro-grade features for enthusiast photographers.",
-    price: 999, oldPrice: 1249, rating: 4, reviews: 732,
+    price: 82995, oldPrice: 103995, rating: 4, reviews: 732,
     badge: "sale", image: "images/d850_camera.png",
     specs: { Sensor:"20.9MP APS-C CMOS", Video:"4K UHD", Burst:"8fps", AF:"51-point Multi-CAM 3500 II", Weight:"720g", Mount:"Nikon F" }
   },
   {
     id: 6, category: "compact", name: "Nikon COOLPIX P1000",
     desc: "Superzoom compact with an incredible 125x optical zoom for wildlife and astronomy.",
-    price: 999, oldPrice: null, rating: 4, reviews: 567,
+    price: 82995, oldPrice: null, rating: 4, reviews: 567,
     badge: null, image: "images/z50_camera.png",
     specs: { Sensor:"16MP 1/2.3\" CMOS", Video:"4K UHD", Burst:"7fps", Zoom:"125x Optical", Weight:"1415g", Mount:"Fixed" }
   }
 ];
 
 const lensProducts = [
-  { id: 101, name: "NIKKOR Z 50mm f/1.8 S", spec: "Standard Prime | Full Frame", price: 596, image: "images/lens_collection.png" },
-  { id: 102, name: "NIKKOR Z 24-70mm f/2.8 S", spec: "Standard Zoom | Full Frame", price: 2299, image: "images/lens_collection.png" },
-  { id: 103, name: "NIKKOR Z 70-200mm f/2.8 VR S", spec: "Telephoto Zoom | Full Frame", price: 2599, image: "images/lens_collection.png" },
-  { id: 104, name: "NIKKOR Z 14-30mm f/4 S", spec: "Wide-Angle Zoom | Full Frame", price: 1299, image: "images/lens_collection.png" },
-  { id: 105, name: "NIKKOR Z 85mm f/1.2 S", spec: "Portrait Prime | Full Frame", price: 2799, image: "images/lens_collection.png" }
+  { id: 101, name: "NIKKOR Z 50mm f/1.8 S", spec: "Standard Prime | Full Frame", price: 49495, image: "images/lens_collection.png" },
+  { id: 102, name: "NIKKOR Z 24-70mm f/2.8 S", spec: "Standard Zoom | Full Frame", price: 190995, image: "images/lens_collection.png" },
+  { id: 103, name: "NIKKOR Z 70-200mm f/2.8 VR S", spec: "Telephoto Zoom | Full Frame", price: 215995, image: "images/lens_collection.png" },
+  { id: 104, name: "NIKKOR Z 14-30mm f/4 S", spec: "Wide-Angle Zoom | Full Frame", price: 107995, image: "images/lens_collection.png" },
+  { id: 105, name: "NIKKOR Z 85mm f/1.2 S", spec: "Portrait Prime | Full Frame", price: 232995, image: "images/lens_collection.png" }
 ];
 
 // ── STATE ─────────────────────────────────────────────
@@ -163,7 +163,7 @@ function handleSearch(e) {
           <img src="${p.image}" alt="${p.name}" style="width:44px;height:44px;object-fit:contain;background:var(--dark3);border-radius:8px;padding:4px;">
           <div>
             <strong>${p.name}</strong><br>
-            <span>$${(p.price).toLocaleString()}</span>
+            <span>&#8377;${(p.price).toLocaleString('en-IN')}</span>
           </div>
         </div>`).join("")
     : `<div style="color:var(--gray2);font-size:14px;padding:12px;">No results found for "<strong style="color:var(--white)">${q}</strong>"</div>`;
@@ -222,8 +222,8 @@ function productCard(p) {
         </div>
         <div class="product-footer">
           <div class="product-price">
-            ${p.oldPrice ? `<span class="price-old">$${p.oldPrice.toLocaleString()}</span>` : ""}
-            <span class="price-current">$${p.price.toLocaleString()}</span>
+            ${p.oldPrice ? `<span class="price-old">&#8377;${p.oldPrice.toLocaleString('en-IN')}</span>` : ""}
+            <span class="price-current">&#8377;${p.price.toLocaleString('en-IN')}</span>
           </div>
           <div class="product-actions">
             <button class="btn-add-cart" onclick="addToCartById(${p.id})" id="add-cart-${p.id}">
@@ -274,7 +274,7 @@ function renderLenses() {
       <div class="lens-info">
         <div class="lens-name">${l.name}</div>
         <div class="lens-spec">${l.spec}</div>
-        <div class="lens-price">$${l.price.toLocaleString()}</div>
+        <div class="lens-price">&#8377;${l.price.toLocaleString('en-IN')}</div>
       </div>
       <button class="lens-add-btn" onclick="addLensToCart(${l.id})" id="lens-add-${l.id}" aria-label="Add to cart">+</button>
     </div>`).join("");
@@ -359,7 +359,7 @@ function renderCart() {
       <img class="cart-item-img" src="${item.image}" alt="${item.name}" />
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-price">$${(item.price * item.qty).toLocaleString()}</div>
+        <div class="cart-item-price">&#8377;${(item.price * item.qty).toLocaleString('en-IN')}</div>
         <div class="cart-item-qty">
           <button class="qty-btn" onclick="updateQty(${item.id},-1)" aria-label="Decrease">−</button>
           <span class="qty-num">${item.qty}</span>
@@ -372,9 +372,9 @@ function renderCart() {
     </div>`).join("");
 
   const subtotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
-  document.getElementById("cart-subtotal").textContent = "$" + subtotal.toLocaleString();
-  document.getElementById("cart-shipping").textContent = subtotal >= 500 ? "FREE" : "$29.99";
-  document.getElementById("cart-total").textContent = "$" + (subtotal + (subtotal >= 500 ? 0 : 29.99)).toLocaleString();
+  document.getElementById("cart-subtotal").textContent = "\u20B9" + subtotal.toLocaleString('en-IN');
+  document.getElementById("cart-shipping").textContent = subtotal >= 42000 ? "FREE" : "\u20B92,499";
+  document.getElementById("cart-total").textContent = "\u20B9" + (subtotal + (subtotal >= 42000 ? 0 : 2499)).toLocaleString('en-IN');
 }
 
 function updateCartCount() {
@@ -434,7 +434,7 @@ function openProductModal(id) {
       </div>
       <div class="modal-desc">${product.desc}</div>
       <div class="modal-specs">${specsHtml}</div>
-      <div class="modal-price">$${product.price.toLocaleString()}</div>
+      <div class="modal-price">&#8377;${product.price.toLocaleString('en-IN')}</div>
       <div class="modal-actions">
         <button class="btn btn-primary" onclick="addToCartById(${product.id})" id="modal-add-cart-${product.id}">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
